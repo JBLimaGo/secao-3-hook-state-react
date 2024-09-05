@@ -2,6 +2,7 @@ import { useState } from "react";
 
 // Componente hook - Função para trabalhar com valores diferentes componente sendo Renderização e alterando a exibição da Tela,
 // Com isso podemos ver a alteração em tempo real na tela.
+//
 
 const ManageData = () => {
   let someData = 10;

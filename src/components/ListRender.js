@@ -3,10 +3,20 @@ import { useState } from "react";
 const ListRender = () => {
   const [list] = useState(["JB", "Pedro", "Jesus"]);
 
-  const [users] = useState([
+  const [users, setUsers] = useState([
     { id: 1, name: "Jesus", age: 37 },
-    { id: 222222, name: "JB", age: 32 },
+    { id: 2, name: "JB", age: 32 },
   ]);
+
+  const deleteRadom = () => {
+    const randomNumber = Math.floor(Math.random() * 3);
+
+    setUsers((prevUsers) => {
+      console.log(prevUsers);
+
+      return prevUsers.filter((user) => randomNumber !== user.id);
+    });
+  };
 
   return (
     <div>
@@ -22,6 +32,8 @@ const ListRender = () => {
           </li>
         ))}
       </ul>
+
+      <button onClick={deleteRadom}> Deleta Valor da Lista</button>
     </div>
   );
 };

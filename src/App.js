@@ -36,12 +36,14 @@ function App() {
          Pode se passar valores diretos <ShowUserName name="Jefferson" /> por variavel <ShowUserName name={name} />  e por State <ShowUserName name={userName} />*/}
       <ShowUserName name={userName} />
 
-      {/* Destructuring em props */}
+      {/* Destructuring em props - Desestruturando props e a forma que mais vera nos projetos */}
       {/* Os Nomes do Destructuring tem que ser o mesmo da variaveis na chamado do componente. Poise se for diferente os nomes não e feito o link de um com o outro
          Dentro do componente.    */}
-      <CarDetails brand="VW" KM={10000} cor="Branco" />
+      <CarDetails brand="VW" KM={10000} color="Branco" carNew={false} />
 
-      {/* Desestruturando props e a forma que mais vera nos projetos   */}
+      {/*  Reutilização de componentes - Reaproveitamento dos componentes  */}
+      <CarDetails brand="Ford" KM={0} color="Preto" carNew={true} />
+      <CarDetails brand="Fiat" km={6000} color="Vermelho" carNew={false} />
     </div>
   );
 }

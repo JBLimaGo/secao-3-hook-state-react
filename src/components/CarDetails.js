@@ -1,5 +1,5 @@
 //const CarDetails = (props) => {
-const CarDetails = ({ brand, KM, color }) => {
+const CarDetails = ({ brand, KM, color, carNew }) => {
   return (
     <div>
       <h2>Detalhes do carro!</h2>
@@ -8,6 +8,7 @@ const CarDetails = ({ brand, KM, color }) => {
         <li> KM: {KM}</li>
         <li> Cor:{color}</li>
       </ul>
+      {carNew && <p>Este carro é novo!</p>}
     </div>
   );
 };

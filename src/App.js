@@ -32,7 +32,7 @@ function App() {
       <ListRender />
       <ConditionalRender />
 
-      {/* props - passando um objeto para um componente  com isso posso usar todas propriedades do objeto dentro do componente
+      {/* props - Nas props e chegado um Objeto com isso posso usar todas propriedades do objeto dentro do componente
          Pode se passar valores diretos <ShowUserName name="Jefferson" /> por variavel <ShowUserName name={name} />  e por State <ShowUserName name={userName} />*/}
       <ShowUserName name={userName} />
 
@@ -40,6 +40,8 @@ function App() {
       {/* Os Nomes do Destructuring tem que ser o mesmo da variaveis na chamado do componente. Poise se for diferente os nomes não e feito o link de um com o outro
          Dentro do componente.    */}
       <CarDetails brand="VW" KM={10000} cor="Branco" />
+
+      {/* Desestruturando props e a forma que mais vera nos projetos   */}
     </div>
   );
 }

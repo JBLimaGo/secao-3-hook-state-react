@@ -11,6 +11,9 @@ const ConditionalRender = () => {
       {!x && <p> Agora x é Falso </p>}
       <h1> if Ternário </h1>
 
+
+{/* If e else */ }
+
       {nane === "João" ? (
         <div>
           <p>O nome é joão</p>

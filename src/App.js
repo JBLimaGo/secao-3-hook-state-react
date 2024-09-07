@@ -6,9 +6,10 @@ import ConditionalRender from "./components/ConditionalRender";
 import ListRender from "./components/ListRender";
 import ManageData from "./components/ManageData";
 import ShowUserName from "./components/ShowUserName";
+import CarDetails from "./components/CarDetails";
 
 function App() {
-  const name = "JBL";  // Dados dinamicos
+  const name = "JBL"; // Dados dinamicos
   const [userName] = useState("Lima"); // Passagem de paramento por variavel - State
   return (
     <div className="App">
@@ -34,6 +35,11 @@ function App() {
       {/* props - passando um objeto para um componente  com isso posso usar todas propriedades do objeto dentro do componente
          Pode se passar valores diretos <ShowUserName name="Jefferson" /> por variavel <ShowUserName name={name} />  e por State <ShowUserName name={userName} />*/}
       <ShowUserName name={userName} />
+
+      {/* Destructuring em props */}
+      {/* Os Nomes do Destructuring tem que ser o mesmo da variaveis na chamado do componente. Poise se for diferente os nomes não e feito o link de um com o outro
+         Dentro do componente.    */}
+      <CarDetails brand="VW" KM={10000} cor="Branco" />
     </div>
   );
 }

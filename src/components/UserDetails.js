@@ -13,7 +13,7 @@ const UserDetails = ({ nome, sexo, proficao, cor, idade }) => {
       {idade >= "18" ? (
         <p>Usuário pode tirar carteira de habilitação!</p>
       ) : (
-        <p>Meno de idade!</p>
+        <p>Menor de idade!</p>
       )}
     </div>
   );

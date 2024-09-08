@@ -130,6 +130,7 @@ function App() {
       {/* State Lift = Tem um estado que e gerenciado pelo componente pai, Tem a formula de alterar o estado */}
       <Message msg={message} /> {/* Componente que consome esse estado */}
       <ChangeMessageState handleMessage={handleMessage} />
+      
       {/* Componente que altera e eleva esse estado para ter uma atualizaçâo e um recossumo desse estado */}
       {/* Tarefa da Seção 3 - Array de pessoa e informações de cada uma nome, sexo, idade, profição, cor 
           e checar se a pessoa pode tirar habilitação ou não !*/}

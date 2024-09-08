@@ -9,6 +9,7 @@ import ShowUserName from "./components/ShowUserName";
 import CarDetails from "./components/CarDetails";
 import Fragment from "./components/Fragment";
 import Container from "./components/Container";
+import ExecuteFunction from "./components/ExecuteFunction";
 
 function App() {
   // const name = "JBL"; // Dados dinamicos
@@ -17,9 +18,13 @@ function App() {
   const cars = [
     // Array de objeto
     { id: 1, brand: "Ferrari", color: "Amarelo", carNew: true, km: 0 },
-    { id: 1, brand: "Honda", color: "Prata", carNew: false, km: 15522 },
-    { id: 1, brand: "Gol", color: "Branco", carNew: true, km: 0 },
+    { id: 2, brand: "Honda", color: "Prata", carNew: false, km: 15522 },
+    { id: 3, brand: "Gol", color: "Branco", carNew: true, km: 0 },
   ];
+
+  function showMessage() {
+    console.log("Evento do componente Pai!");
+  }
 
   return (
     <div className="App">
@@ -44,7 +49,7 @@ function App() {
 
       {/* props - Nas props e chegado um Objeto com isso posso usar todas propriedades do objeto dentro do componente
          Pode se passar valores diretos <ShowUserName name="Jefferson" /> por variavel <ShowUserName name={name} />  e por State <ShowUserName name={userName} />*/}
-      <ShowUserName name={userName} />
+      {/* <ShowUserName name={userName} /> */}
 
       {/* Destructuring em props - Desestruturando props e a forma que mais vera nos projetos */}
       {/* Os Nomes do Destructuring tem que ser o mesmo da variaveis na chamado do componente. Poise se for diferente os nomes não e feito o link de um com o outro
@@ -58,6 +63,7 @@ function App() {
       {/*  Loop em array de objeto = Esse modo e mais utilizado quando tenho varios dados parto para usar o map um loop para impressão na tela */}
       {cars.map((car) => (
         <CarDetails
+          key={car.id}
           brand={car.brand}
           color={car.color}
           km={car.km}
@@ -77,6 +83,10 @@ function App() {
       <Container myValue="Testing 2">
         <h5> Testando o container </h5>
       </Container>
+
+      {/* Executa Função  do compomente pai para o componente filho passa a funcão atraves de uma prop e no componente 
+       Extrai essa prop e utiliza */}
+      <ExecuteFunction myFunction={showMessage} />
     </div>
   );
 }

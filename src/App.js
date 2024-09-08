@@ -8,6 +8,7 @@ import ManageData from "./components/ManageData";
 import ShowUserName from "./components/ShowUserName";
 import CarDetails from "./components/CarDetails";
 import Fragment from "./components/Fragment";
+import Container from "./components/Container";
 
 function App() {
   // const name = "JBL"; // Dados dinamicos
@@ -64,7 +65,18 @@ function App() {
         />
       ))}
 
+      {/* Fragment */}
       <Fragment propFragment="Teste" />
+
+      {/* Children - Abraçar um conteudo com algum conteudo
+      nos exemplos temos props distintos e html internos distintos  */}
+      <Container myValue="Testing">
+        <p> E Este é o conteúdo</p>
+      </Container>
+
+      <Container myValue="Testing 2">
+        <h5> Testando o container </h5>
+      </Container>
     </div>
   );
 }

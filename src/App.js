@@ -93,17 +93,21 @@ function App() {
       */}
       <ManageData />
       <ListRender />
+      
       <ConditionalRender />
       {/* props - Nas props e chegado um Objeto com isso posso usar todas propriedades do objeto dentro do componente
          Pode se passar valores diretos <ShowUserName name="Jefferson" /> por variavel <ShowUserName name={name} />  e por State <ShowUserName name={userName} />*/}
       <ShowUserName name={userName} />
+
       {/* Destructuring em props - Desestruturando props e a forma que mais vera nos projetos */}
       {/* Os Nomes do Destructuring tem que ser o mesmo da variaveis na chamado do componente. Poise se for diferente os nomes não e feito o link de um com o outro
          Dentro do componente.    */}
       <CarDetails brand="VW" KM={10000} color="Branco" carNew={false} />
+
       {/*  Reutilização de componentes - Reaproveitamento dos componentes  */}
       <CarDetails brand="Ford" KM={0} color="Preto" carNew={true} />
       <CarDetails brand="Fiat" km={6000} color="Vermelho" carNew={false} />
+
       {/*  Loop em array de objeto = Esse modo e mais utilizado quando tenho varios dados parto para usar o map um loop para impressão na tela */}
       {cars.map((car) => (
         <CarDetails
@@ -114,8 +118,10 @@ function App() {
           carNew={car.carNew}
         />
       ))}
+
       {/* Fragment */}
       <Fragment propFragment="Teste" />
+
       {/* Children - Abraçar um conteudo com algum conteudo
       nos exemplos temos props distintos e html internos distintos  */}
       <Container myValue="Testing">
@@ -124,14 +130,16 @@ function App() {
       <Container myValue="Testing 2">
         <h5> Testando o container </h5>
       </Container>
+
       {/* Executa Função  do compomente pai para o componente filho passa a funcão atraves de uma prop e no componente 
        Extrai essa prop e utiliza */}
       <ExecuteFunction myFunction={showMessage} />
+
       {/* State Lift = Tem um estado que e gerenciado pelo componente pai, Tem a formula de alterar o estado */}
       <Message msg={message} /> {/* Componente que consome esse estado */}
-      <ChangeMessageState handleMessage={handleMessage} />
+      <ChangeMessageState handleMessage={handleMessage} /> {/* Componente que altera e eleva esse estado para ter uma atualizaçâo e um recossumo desse estado */}
       
-      {/* Componente que altera e eleva esse estado para ter uma atualizaçâo e um recossumo desse estado */}
+      
       {/* Tarefa da Seção 3 - Array de pessoa e informações de cada uma nome, sexo, idade, profição, cor 
           e checar se a pessoa pode tirar habilitação ou não !*/}
       {pessoa.map((pessoa) => (

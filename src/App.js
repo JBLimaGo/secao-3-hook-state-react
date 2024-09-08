@@ -7,10 +7,19 @@ import ListRender from "./components/ListRender";
 import ManageData from "./components/ManageData";
 import ShowUserName from "./components/ShowUserName";
 import CarDetails from "./components/CarDetails";
+import Fragment from "./components/Fragment";
 
 function App() {
-  const name = "JBL"; // Dados dinamicos
+  // const name = "JBL"; // Dados dinamicos
   const [userName] = useState("Lima"); // Passagem de paramento por variavel - State
+
+  const cars = [
+    // Array de objeto
+    { id: 1, brand: "Ferrari", color: "Amarelo", carNew: true, km: 0 },
+    { id: 1, brand: "Honda", color: "Prata", carNew: false, km: 15522 },
+    { id: 1, brand: "Gol", color: "Branco", carNew: true, km: 0 },
+  ];
+
   return (
     <div className="App">
       <div>
@@ -44,6 +53,18 @@ function App() {
       {/*  Reutilização de componentes - Reaproveitamento dos componentes  */}
       <CarDetails brand="Ford" KM={0} color="Preto" carNew={true} />
       <CarDetails brand="Fiat" km={6000} color="Vermelho" carNew={false} />
+
+      {/*  Loop em array de objeto = Esse modo e mais utilizado quando tenho varios dados parto para usar o map um loop para impressão na tela */}
+      {cars.map((car) => (
+        <CarDetails
+          brand={car.brand}
+          color={car.color}
+          km={car.km}
+          carNew={car.carNew}
+        />
+      ))}
+
+      <Fragment propFragment="Teste" />
     </div>
   );
 }
